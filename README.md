@@ -45,4 +45,4 @@ General:
 * Verbose Option to see the action
 * Better (-h --help) help options and output
 * Commandline option for multiple iterations through the SYN/ACK discovery process for greater accuracy
-* Added support for HTTPS
+* Future: Add support for HTTPS
