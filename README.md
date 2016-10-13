@@ -1,5 +1,7 @@
- Cisco IP Phone Inventory Tool (CIPIT)
-This Script was originally written by Vince Loschiavo on 2012-JAN-03 Original project: https://sourceforge.net/projects/cipinventory/
+# Cisco IP Phone Inventory Tool (CIPIT)
+This Script was originally written by Vince Loschiavo on 2012-JAN-03
+
+Original project: https://sourceforge.net/projects/cipinventory/
 
 New branch author: Michael Randolph on 2016-OCT-13
 
@@ -7,9 +9,12 @@ if you enjoy it or have comments/suggestions
   email: <first name> + <c> + <last name> @ gmail d0t com
 
 Follow new project branch on GitHub
-New project branch: https://github.com/michaelcrandolph/Cisco-IP-Phone-Inventory-Tool
+
+New project branch:
+https://github.com/michaelcrandolph/Cisco-IP-Phone-Inventory-Tool
 
 This script was tested with Cisco SCCP images:
+---
 * CP-6921G
 * CP-7905G / CP-7906G
 * CP-7910G / CP-7911G / CP-7912G / CP-7920 / CP-7921G / CP-7925G / CP-7925G-E
@@ -24,6 +29,7 @@ When Reading from a File of IP Addresses:
 * Reporting on Phones not responding
 
 General:
+---
 * Now parses phone XML for greater portability across localizations. Tested on: English, French, and Chinese localizations
 * Overwrite file check
 * Progress indicator to let you know it's actually doing something
