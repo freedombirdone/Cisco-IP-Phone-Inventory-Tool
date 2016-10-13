@@ -1,4 +1,4 @@
-Cisco IP Phone Inventory Tool (CIPIT)
+ Cisco IP Phone Inventory Tool (CIPIT)
 This Script was originally written by Vince Loschiavo on 2012-JAN-03 Original project: https://sourceforge.net/projects/cipinventory/
 
 New branch author: Michael Randolph on 2016-OCT-13
@@ -30,9 +30,10 @@ General:
 * Calculate execution time
 * CIDR IP Address Entry from Commandline
 * Improved overall speed
-By using:
-* TCP/Syn-ACK Echo to test IP Reachability
-* IO::Socket::INET to test if TCP port 80/443 is open
+
+  By using:
+  * TCP/Syn-ACK Echo to test IP Reachability
+  * IO::Socket::INET to test if TCP port 80/443 is open
 * IP Addresses sorted in output file
 * Included warning for CIDR less than /23 as this can put a lot of load on your network.
 * Verbose Option to see the action
