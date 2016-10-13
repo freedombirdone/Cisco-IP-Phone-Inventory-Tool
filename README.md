@@ -10,14 +10,14 @@ Follow new project branch on GitHub
 New project branch: https://github.com/michaelcrandolph/Cisco-IP-Phone-Inventory-Tool
 
 This script was tested with Cisco SCCP images:
-CP-6921G
-CP-7905G / CP-7906G
-CP-7910G / CP-7911G / CP-7912G / CP-7920 / CP-7921G / CP-7925G / CP-7925G-E
-CP-7935 - Tested and Not working
-CP-7936 - Tested and Not working
-CP-7937G / CP-7940G / CP-7941G / CP-7942G / CP-7945G
-CP-7960G / CP-7961G / CP-7962G / CP-7965G / CP-7970G / CP-7971G-G / CP-7975G / CP-7985G
-CP-9951 / CP-9971
+	-CP-6921G
+	-CP-7905G / CP-7906G
+	-CP-7910G / CP-7911G / CP-7912G / CP-7920 / CP-7921G / CP-7925G / CP-7925G-E
+	-CP-7935 - Tested and Not working
+	-CP-7936 - Tested and Not working
+	-CP-7937G / CP-7940G / CP-7941G / CP-7942G / CP-7945G
+	-CP-7960G / CP-7961G / CP-7962G / CP-7965G / CP-7970G / CP-7971G-G / CP-7975G / CP-7985G
+	-CP-9951 / CP-9971
 
 When Reading from a File of IP Addresses:
 	-Includes Duplicate IP checking
