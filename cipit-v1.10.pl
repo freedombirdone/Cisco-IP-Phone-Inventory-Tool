@@ -49,7 +49,6 @@
 #####################################
 #  Define Variables & Includes		#
 #####################################
-
 use LWP::Simple;
 use LWP::UserAgent;
 use Net::Ping;
@@ -99,6 +98,9 @@ my $opt_timeout = 8;	# Ping and IO::Socket timeout - Default set at 8 seconds as
 my $opt_repeat = 2;		# Number of times through the SYN/ACK/Socket loop (Default = 2);
 my $xml_switchinfo_url;	# URL for switch port info
 my $content_net;		# Switch port XML data
+
+
+
 
 Getopt::Long::Configure("no_ignore_case");
 GetOptions(
@@ -170,37 +172,37 @@ print(' ');
 BIG:	foreach (@PhoneIPs) {
 		$cur_sparkle = ($cur_sparkle + 1) % @sparkle;
 		print("\010$sparkle[$cur_sparkle]");
-		#$xml_url = "http://$_" . '/' . "DeviceInformationX";				# HTTP XML url for Main Device Information Page
-		$xml_url = "https://$_" . '/' . "DeviceInformationX";			    # HTTPS XML url for Main Device Information Page
+		$xml_url = "http://$_" . '/' . "DeviceInformationX";				# HTTP XML url for Main Device Information Page
+		#$xml_url = "https://$_" . '/' . "DeviceInformationX";			    # HTTPS XML url for Main Device Information Page
 		
-		# $content = get $xml_url; # HTTP method
-        my $ua = LWP::UserAgent->new;                                       # HTTPS
-        my $req = HTTP::Request->new(GET => $xml_url);                      # HTTPS
-        my $res = $ua->request($req);                                       # HTTPS
+		# $content = get $xml_url;                                          # HTTP method
+        my $ua = LWP::UserAgent->new;                                       
+        my $req = HTTP::Request->new(GET => $xml_url);                      
+        my $res = $ua->request($req);                                       
 		
-        #if ($res->is_success) {
-        #    print $res->content;
-        #}
-        #else {
-        #    print "Failed: ", $content->status_line, "\n";
-        #}
+        if ($res->is_success) {
+            print $res->content;
+        }
+        else {
+            print "Failed: ", $res->status_line, "\n";
+        }
 		$content = $res->content;
 		
 		# $xml_switchinfo_url = "http://$_" . '/CGI/Java/Serviceability?adapterX=device.statistics.port.network';	# HTTP XML page for Network Port information
-		$xml_switchinfo_url = "https://$_" . '/CGI/Java/Serviceability?adapterX=device.statistics.port.network';	# HTTPS XML page for Network Port information
+		$xml_switchinfo_url = "https://$_" . '/CGI/Java/Serviceability?adapterX=device.statistics.port.network';	# XML page for Network Port information
 		# $content_net = get $xml_switchinfo_url; # HTTP method
-        $req = HTTP::Request->new(GET => $xml_switchinfo_url);       # HTTPS
-        $res = $ua->request($req);                                   # HTTPS
-		$content_net = $res->content;                                # HTTPS
+        $req = HTTP::Request->new(GET => $xml_switchinfo_url);       
+        $res = $ua->request($req);                                   
+		$content_net = $res->content;                                
 		
 		# Sanity check for grabbed phone-web page content
 		if (not defined($content)) {										# Phone doesn't support XML - handle the phone web page as best as possible
-			# $url = "http://$_";  											# HTTP: Phone Does not support XML.  Let's grab the default page.
-			$url = "https://$_";  											# HTTPS: Phone Does not support XML.  Let's grab the default page.
+			$url = "http://$_";  											# HTTP: Phone Does not support XML.  Let's grab the default page.
+			# $url = "https://$_";  											# Phone Does not support XML.  Let's grab the default page.
 		    # $content = get $url;											# HTTP
-		    $req = HTTP::Request->new(GET => $xml_switchinfo_url);          # HTTPS
-            $res = $ua->request($req);                                      # HTTPS
-		    $content = $res->content;			                            # HTTPS
+		    $req = HTTP::Request->new(GET => $xml_switchinfo_url);          
+            $res = $ua->request($req);                                      
+		    $content = $res->content;			                            
 		}
 		if (not defined($content)) { 										# Check if $content is defined and from a phone.
 			next BIG;
@@ -834,6 +836,7 @@ sub parse_xml {
 
 =head1 UPDATES
 
- Last update on: 2012-JAN-18  23:00 PST
+ Last update on: 2016-OCT-13  23:00 PST
 
 =cut
+
